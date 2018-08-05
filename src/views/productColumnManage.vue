@@ -1,42 +1,38 @@
 <template>
-	<div style="height: 100%;">
-		<el-row class="pageTop">
+	<div class="mainContent">
+		<el-row class="mainContent-topTitle">
 			<el-col>产品栏目管理</el-col>
 		</el-row>
 
 		<!--工具条-->
-		<el-form :inline="true" style="width: 95%;margin: 2rem auto auto;">
+		<el-form :inline="true" class="operateBar">
 			<el-form-item>
 				<el-input placeholder="请输入栏目名称" v-model="searchName"></el-input>
 			</el-form-item>
 			<el-form-item>
-				<el-button type="primary" icon="el-icon-search"
-						   style="background-color: #009688;border:1px solid #009688"
+				<el-button class="btn-green" type="primary" icon="el-icon-search"
 						   @click="searchColumn">搜索
 				</el-button>
 			</el-form-item>
 			<el-form-item>
-				<el-button type="primary" icon="el-icon-circle-plus-outline"
-						   style="background-color: #009688;border:1px solid #009688"
+				<el-button class="btn-green" type="primary" icon="el-icon-circle-plus-outline"
 						   @click="showDialog(null)">新增栏目
 				</el-button>
 			</el-form-item>
 		</el-form>
 
 		<!--列表-->
-		<el-table highlight-current-row :stripe="true" :border="true"
+		<el-table class="tableContent"
+                  highlight-current-row
+                  :stripe="true"
+                  :border="true"
 				  v-loading="tableLoading"
-				  style="width: 95%;margin: auto" :data="productColumnList">
-			<el-table-column type="index" align="center" label="序号" width="60">
-			</el-table-column>
-			<el-table-column prop="columnName" label="栏目名称" sortable>
-			</el-table-column>
-			<el-table-column prop="createBy" align="center" label="创建人" width="100" sortable>
-			</el-table-column>
-			<el-table-column prop="createDate" align="center" label="创建时间" width="200" sortable>
-			</el-table-column>
-			<el-table-column prop="remark" label="备注" sortable>
-			</el-table-column>
+                  :data="productColumnList">
+			<el-table-column type="index" align="center" label="序号" width="60"></el-table-column>
+			<el-table-column prop="columnName" label="栏目名称" sortable></el-table-column>
+			<el-table-column prop="createBy" align="center" label="创建人" width="100" sortable></el-table-column>
+			<el-table-column prop="createDate" align="center" label="创建时间" width="200" sortable></el-table-column>
+			<el-table-column prop="remark" label="备注" sortable></el-table-column>
 			<el-table-column label="操作" align="center" width="150">
 				<template slot-scope="scope">
 					<el-button type="success" plain size="mini" @click="showDialog(scope.row)">编辑
@@ -48,7 +44,7 @@
 		</el-table>
 
 		<!--分页-->
-		<el-pagination style="width: 95%;margin: 1rem auto auto;"
+		<el-pagination class="paginationBar"
 					   @size-change="handleSizeChange"
 					   @current-change="handleCurrentChange"
 					   :current-page="currentPage"
@@ -59,15 +55,13 @@
 		</el-pagination>
 
 		<!--弹框-->
-		<el-dialog v-bind:title="changeDialog.title" width="550px"
-				   :visible.sync="changeDialog.dialogVisible">
+		<el-dialog v-bind:title="changeDialog.title"  width="550px"  :visible.sync="changeDialog.dialogVisible">
 			<el-form :model="changeDialog" :rules="changeDialog.rules" label-width="95px">
 				<el-form-item label="栏目名称：" prop="columnName">
 					<el-input v-model="changeDialog.columnName" auto-complete="off"></el-input>
 				</el-form-item>
 				<el-form-item label="栏目备注：">
-					<el-input type="textarea" v-model="changeDialog.remark"
-							  auto-complete="off"></el-input>
+					<el-input type="textarea" v-model="changeDialog.remark" auto-complete="off"></el-input>
 				</el-form-item>
 			</el-form>
 			<div slot="footer" class="dialog-footer">
@@ -82,7 +76,7 @@
 	import * as api from '../api/api';
 
 	export default {
-		name: "productColumnEdit",
+		name: "productColumnManage",
 		data() {
 			return {
 				currentPage: 1,
@@ -228,11 +222,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-	.pageTop {
-		padding: 1rem 1rem;
-		height: 50px;
-		border-bottom: 1px solid #ddd;
-	}
-</style>

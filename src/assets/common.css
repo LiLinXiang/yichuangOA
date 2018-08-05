@@ -1,0 +1,43 @@
+.mainContent{
+    height: 100%;
+}
+.mainContent-topTitle{
+    padding: 1rem 30px;
+    height: 50px;
+    border-bottom: 1px solid #8eccac;
+    position: relative;
+}
+.mainContent-topTitle:before{
+    content: "";
+    position: absolute;
+    top:18px;
+    left: 20px;
+    width: 5px;
+    height: 20px;
+    background-color:#009688 ;
+}
+.operateBar{
+    width: 95%;
+    margin: 2rem auto auto;
+}
+.tableContent{
+    width: 95%;
+    margin: auto;
+}
+.formContent{
+    padding-top: 2rem;
+    width: 95%;
+    margin: auto;
+}
+.btn-green{
+    background-color: #009688;
+    border:1px solid #009688;
+}
+.btn-green:disabled, .btn-green:active, .btn-green:focus,.btn-green:hover,.btn-green:disabled:active,.btn-green:disabled:hover{
+    background-color: #32aa9f;
+    border:1px solid #009688;
+}
+.paginationBar{
+    width: 95%;
+    margin: 1rem auto auto;
+}

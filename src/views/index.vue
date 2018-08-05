@@ -37,7 +37,7 @@
 						</template>
 						<el-menu-item index="2-1"><i class="el-icon-view"></i>首页管理</el-menu-item>
 						<el-submenu index="2-2">
-							<template slot="title"><i class="el-icon-view"></i>产品管理</template>
+							<template slot="title"><i class="el-icon-view"></i>产品栏目管理</template>
 							<el-menu-item v-for="(productColumn, index) in productColumnList"
 										  :key="index" v-bind:index="'2-2-' + index"
 										  @click="navProductClick(productColumn)">
@@ -45,7 +45,7 @@
 							</el-menu-item>
 						</el-submenu>
 						<el-submenu index="2-3">
-							<template slot="title"><i class="el-icon-view"></i>新闻管理</template>
+							<template slot="title"><i class="el-icon-view"></i>新闻栏目管理</template>
 							<el-menu-item index="2-3-1"><i class="el-icon-edit"></i>公司新闻
 							</el-menu-item>
 							<el-menu-item index="2-3-2"><i class="el-icon-edit"></i>行业新闻
@@ -141,7 +141,7 @@
 				}
 			},
 			navProductClick(item) {
-				console.log(item)
+                this.$router.push('/index/productManage');
 			},
 			allProductColumn() {
 				let _this = this;

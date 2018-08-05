@@ -6,7 +6,7 @@
 import axios from 'axios';
 import router from '../routers';
 
-const baseUrl = 'http://localhost:8080';
+const baseUrl = 'http://192.168.31.106:8080';
 axios.defaults.withCredentials = true; //解决每次请求session不一致的问题
 
 export const $postOld = (url, params, {success = () => {}, error = () => {}}) => {

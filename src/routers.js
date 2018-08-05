@@ -12,6 +12,8 @@ const NotFound = () => import(/* webpackChunkName: "group-foo" */ './views/404')
 const Index = () => import(/* webpackChunkName: "group-foo" */ './views/index');
 const ProductColumnManage = () => import(/* webpackChunkName: "group-foo" */ './views/productColumnManage');
 const Home = () => import(/* webpackChunkName: "group-foo" */ './views/home');
+const ProductManage = () => import(/* webpackChunkName: "group-foo" */ './views/productManage');
+const ProductEdit = () => import(/* webpackChunkName: "group-foo" */ './views/productEdit');
 
 
 let routes = [
@@ -51,7 +53,17 @@ let routes = [
 				path: '/index/productColumnManage',
 				name: '栏目管理',
 				component: ProductColumnManage
-			}
+			},
+            {
+                path: '/index/productManage',
+                name: '产品管理',
+                component: ProductManage
+            },
+            {
+                path: '/index/productEdit',
+                name: '产品编辑',
+                component: ProductEdit
+            }
 		]
 
 	},
