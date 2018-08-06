@@ -1,18 +1,15 @@
 <template>
 	<div class="mainContent">
 		<el-row class="mainContent-topTitle">
-			<el-col>新闻栏目管理</el-col>
+			<el-col><label>新闻栏目管理</label></el-col>
 		</el-row>
 
 		<!--工具条-->
 		<el-form :inline="true" class="operateBar">
 			<el-form-item>
-				<el-input placeholder="请输入栏目名称" v-model="searchName"></el-input>
-			</el-form-item>
-			<el-form-item>
-				<el-button type="primary" icon="el-icon-search"
-						   @click="searchColumn">搜索
-				</el-button>
+				<el-input placeholder="请输入栏目名称" v-model="searchName">
+                    <el-button slot="append" icon="el-icon-search" @click="searchColumn"></el-button>
+                </el-input>
 			</el-form-item>
 			<el-form-item>
 				<el-button type="primary" icon="el-icon-circle-plus-outline"
