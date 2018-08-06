@@ -2,28 +2,27 @@
     <div class="mainContent">
 
         <el-row class="mainContent-topTitle">
-            <el-col>产品管理</el-col>
+            <el-col><label>产品管理</label></el-col>
         </el-row>
 
         <!--工具条-->
         <el-form class="operateBar" :inline="true">
             <el-form-item>
-                <el-input placeholder="请输入产品名称"></el-input>
-            </el-form-item>
-            <el-form-item>
-                <el-button type="primary" icon="el-icon-search">搜索</el-button>
+                <el-input placeholder="请输入产品名称">
+                    <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" icon="el-icon-circle-plus-outline">新增产品</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" disabled><i class="al-icon-jinyong"></i>禁用</el-button>
+                <el-button type="success" plain disabled><i class="al-icon-qiyong"></i>启用</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" disabled><i class="al-icon-qiyong"></i>启用</el-button>
+                <el-button type="warning" plain disabled><i class="al-icon-jinyong"></i>禁用</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" icon="el-icon-delete" disabled>批量删除</el-button>
+                <el-button  type="danger" plain icon="el-icon-delete" disabled>批量删除</el-button>
             </el-form-item>
         </el-form>
 

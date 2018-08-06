@@ -1,7 +1,7 @@
 <template>
     <div class="mainContent">
         <el-row class="mainContent-topTitle">
-            <el-col>产品编辑</el-col>
+            <el-col><label>产品编辑</label></el-col>
         </el-row>
         <el-form class="formContent" ref="form" label-width="80px">
             <el-form-item label="所属栏目 :">
