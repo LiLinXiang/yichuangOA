@@ -1,7 +1,7 @@
 <template>
 	<div class="mainContent">
 		<el-row class="mainContent-topTitle">
-			<el-col>产品栏目管理</el-col>
+			<el-col>新闻栏目管理</el-col>
 		</el-row>
 
 		<!--工具条-->
@@ -76,7 +76,7 @@
 	import * as api from '../api/api';
 
 	export default {
-		name: "productColumnManage",
+		name: "newsColumnManage",
 		data() {
 			return {
 				currentPage: 1,

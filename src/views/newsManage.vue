@@ -2,19 +2,19 @@
     <div class="mainContent">
 
         <el-row class="mainContent-topTitle">
-            <el-col>产品管理</el-col>
+            <el-col>新闻列表</el-col>
         </el-row>
 
         <!--工具条-->
         <el-form class="operateBar" :inline="true">
             <el-form-item>
-                <el-input placeholder="请输入产品名称"></el-input>
+                <el-input placeholder="请输入新闻标题"></el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" icon="el-icon-search">搜索</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" icon="el-icon-circle-plus-outline">新增产品</el-button>
+                <el-button type="primary" icon="el-icon-circle-plus-outline">添加新闻</el-button>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" disabled><i class="al-icon-jinyong"></i>禁用</el-button>
@@ -34,18 +34,19 @@
                   :stripe="true"
                   :border="true"
                   v-loading="tableLoading"
-                  :data="productList">
+                  :data="newsList">
             <el-table-column type="selection" align="center" width="60"></el-table-column>
             <el-table-column type="index" align="center" label="序号" width="60"></el-table-column>
-            <el-table-column prop="productName" label="产品名称" sortable></el-table-column>
+            <el-table-column prop="productName" label="新闻标题" sortable></el-table-column>
             <el-table-column prop="createBy" align="center" label="创建人" width="100" sortable></el-table-column>
             <el-table-column prop="createDate" align="center" label="创建时间" width="200" sortable></el-table-column>
-            <el-table-column prop="remark" label="备注"></el-table-column>
             <el-table-column prop="status" label="状态" width="60"></el-table-column>
             <el-table-column label="操作" align="center" width="150">
                 <template slot-scope="scope">
-                    <el-button type="success" plain size="mini">编辑</el-button>
-                    <el-button type="danger" size="mini" @click="deleteProduct(scope.row.id)">删除</el-button>
+                    <el-button type="success" plain size="mini">编辑
+                    </el-button>
+                    <el-button type="danger" size="mini" @click="deleteNews(scope.row.id)">删除
+                    </el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -68,7 +69,7 @@
     import * as api from '../api/api'
 
 	export default {
-		name: "productManage",
+		name: "newsManage",
         data(){
 		    return{
                 currentPage: 1,
@@ -76,7 +77,7 @@
                 totalCount: 0,
                 tableLoading: false,
                 selsChange: true,
-                productList: [],
+                newsList: [],
 
             }
         },
@@ -93,9 +94,9 @@
                     //this.allProductColumn();
                 }
             },
-            deleteProduct(id) {
+            deleteNews(id) {
                 let _this = this;
-                _this.$confirm('确定要删除该产品吗?', '提示', {
+                _this.$confirm('确定要删除该x新闻吗?', '提示', {
                     cancelButtonText: '取消',
                     confirmButtonText: '确定',
                     type: 'warning'

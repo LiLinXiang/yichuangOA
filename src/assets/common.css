@@ -4,7 +4,7 @@
 .mainContent-topTitle{
     padding: 1rem 30px;
     height: 50px;
-    border-bottom: 1px solid #8eccac;
+    border-bottom: 1px solid #6abbff;
     position: relative;
 }
 .mainContent-topTitle:before{
@@ -14,7 +14,7 @@
     left: 20px;
     width: 5px;
     height: 20px;
-    background-color:#009688 ;
+    background-color:#409EFF ;
 }
 .operateBar{
     width: 95%;

@@ -1,7 +1,7 @@
 <template>
     <div class="mainContent">
         <el-row class="mainContent-topTitle">
-            <el-col>产品编辑</el-col>
+            <el-col>新闻编辑</el-col>
         </el-row>
         <el-form class="formContent" ref="form" label-width="80px">
             <el-form-item label="所属栏目 :">
@@ -15,7 +15,7 @@
                 </el-select>
             </el-form-item>
 
-            <el-form-item label="产品图片 :">
+            <el-form-item label="新闻封面 :">
                 <el-upload
                         action="https://jsonplaceholder.typicode.com/posts/"
                         list-type="picture-card"
@@ -31,29 +31,20 @@
                 </el-dialog>
             </el-form-item>
 
-            <el-form-item label="产品名称 :">
-                <el-input placeholder="请输入产品名称"></el-input>
+            <el-form-item label="新闻标题 :">
+                <el-input placeholder="请输入新闻标题"></el-input>
             </el-form-item>
 
 
             <div style="margin-bottom:1.5rem ">
-                <label class="ueditor-wrap-label">产品说明 :</label>
+                <label class="ueditor-wrap-label">新闻内容 :</label>
                 <vue-ueditor-wrap class="ueditor-wrap" v-model="msg" :config="uediterConfig" style="margin-left: 80px;"></vue-ueditor-wrap>
             </div>
             <!--<el-form-item label="产品说明 :"></el-form-item>-->
 
-
-            <el-form-item label="补充说明 :">
-                <el-input
-                        type="textarea"
-                        :autosize="{minRows: 3}"
-                        placeholder="请输入内容">
-                </el-input>
-            </el-form-item>
-
         </el-form>
         <div class="form-footbar">
-            <el-button class="save-botton" type="primary">保存产品信息</el-button>
+            <el-button class="save-botton" type="primary">保存</el-button>
             <router-link to="ProductManage"><el-button class="save-botton" type="info" plain>返回</el-button></router-link>
         </div>
     </div>
@@ -63,7 +54,7 @@
     import VueUeditorWrap from 'vue-ueditor-wrap'
 
     export default {
-        name: "productEdit",
+        name: "newsEdit",
         data(){
             return{
                 options: [{
