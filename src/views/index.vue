@@ -4,12 +4,12 @@
 		<el-header background-color="#292b32">
 			<div class="logo"><span>一创科技</span></div>
 			<el-menu :default-active="activeIndex" style="width:130px;float:left" mode="horizontal"
-					 background-color="#23262E" text-color="#fff" active-text-color="#009688">
+					 background-color="#23262E" text-color="#fff" active-text-color="#409EFF">
 				<el-menu-item index="1"><i class="el-icon-menu"></i>首页</el-menu-item>
 			</el-menu>
 			<el-menu :default-active="activeIndex2" style="width:285px;float:right"
 					 mode="horizontal" @select="handleHeadMenuSelect" background-color="#23262E"
-					 text-color="#fff" active-text-color="#009688">
+					 text-color="#fff" active-text-color="#409EFF">
 				<el-menu-item index="1"><i class="al-icon-shouye"></i>查看网站</el-menu-item>
 				<el-submenu index="2">
 					<template slot="title"><img src="http://t.cn/RCzsdCq" class="userPhoto">宇顺电子
@@ -25,7 +25,7 @@
 				<el-menu style="height: 100%;text-align: left" default-active="2"
 						 class="el-menu-vertical-demo" @select="handleLeftMenuSelect"
 						 @open="handleLeftMenuOpen" @close="handleLeftMenuClose"
-						 background-color="#393D49" text-color="#fff" active-text-color="#009688">
+						 background-color="#393D49" text-color="#fff" active-text-color="#409EFF">
 					<el-menu-item index="1">
 						<i class="el-icon-menu"></i>
 						<span slot="title">数据总揽</span>
@@ -37,7 +37,7 @@
 						</template>
 						<el-menu-item index="2-1"><i class="el-icon-view"></i>首页管理</el-menu-item>
 						<el-submenu index="2-2">
-							<template slot="title"><i class="el-icon-view"></i>产品管理</template>
+							<template slot="title"><i class="el-icon-view"></i>产品栏目管理</template>
 							<el-menu-item v-for="(productColumn, index) in productColumnList"
 										  :key="index" v-bind:index="'2-2-' + index"
 										  @click="navProductClick(productColumn)">
@@ -45,7 +45,7 @@
 							</el-menu-item>
 						</el-submenu>
 						<el-submenu index="2-3">
-							<template slot="title"><i class="el-icon-view"></i>新闻管理</template>
+							<template slot="title"><i class="el-icon-view"></i>新闻栏目管理</template>
 							<el-menu-item index="2-3-1"><i class="el-icon-edit"></i>公司新闻
 							</el-menu-item>
 							<el-menu-item index="2-3-2"><i class="el-icon-edit"></i>行业新闻
@@ -141,7 +141,7 @@
 				}
 			},
 			navProductClick(item) {
-				console.log(item)
+                this.$router.push('/index/productManage');
 			},
 			allProductColumn() {
 				let _this = this;
@@ -202,10 +202,15 @@
 		width: 250px;
 		float: left;
 		span {
-			color: #009688;
+			color: #409EFF;
 			font-size: 18px;
 		}
 	}
+
+    [class^=al-icon]{
+        font-size: 18px;
+        margin-right: 5px;
+    }
 
 	/*body > .el-container {
 		margin-bottom: 40px;
